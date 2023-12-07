@@ -1,0 +1,50 @@
+{
+    "content" : [
+        {
+            "id" : 0,
+            "type" : 0,
+            "name" : "Black Panther: Wakanda Forever",
+            "reviews" : 4,
+            "stars" : 18,
+            "rating" : 3,
+            "viewers" : ["user2", "user3"]
+        },
+        {
+            "id" : 1,
+            "type" : 1,
+            "name" : "Stranger Things 1",
+            "reviews" : 3,
+            "stars" : 13,
+            "rating" : 3,
+            "episodes" : 8,
+            "viewers" : ["user1", "user2"]
+        },
+        {
+            "id" : 2,
+            "type" : 1,
+            "name" : "Stranger Things 2",
+            "reviews" : 2,
+            "stars" : 5,
+            "rating" : 4,
+            "episodes" : 9,
+            "viewers" : ["user2", "user3"]
+        }
+    ],
+    "users" : [
+        {
+            "uname" : "user1",
+            "limit" : 3,
+            "viewed" : [1]
+        },
+        {
+            "uname" : "user2",
+            "limit" : 4,
+            "viewed" : [0, 1, 2]
+        },
+        {
+            "uname" : "user3",
+            "limit" : 4,
+            "viewed" : [0, 2]
+        }
+    ]
+}
