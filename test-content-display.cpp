@@ -7,8 +7,6 @@
 #include <string>
 
 using namespace std;
-// our test does a bit more, but this is a sample that you can use to
-// test your content classes.  
 int main(int argc, char* argv[])
 {
     Movie m(1111, "Movie Title", 2, 7, 3);

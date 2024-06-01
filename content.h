@@ -93,7 +93,7 @@ private:
 };
 
 // Update the Movie and Series classes below to use inheritance
-// Then you may also add the appropriate data members (if necessary), 
+// add the appropriate data members (if necessary), 
 //  and override the behavior 
 class Movie : public Content// update me 
 {
@@ -115,7 +115,7 @@ public:
     ~Movie();
 
     /// Add an override of the Content::display function, 
-    /// if you deem it necessary
+    /// if necessary
     void display(std::ostream& ostr) const;
 
 protected:

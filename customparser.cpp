@@ -16,7 +16,7 @@ void CustomFormatParser::parse(std::istream& is, std::vector<Content*>& content,
     content.clear();
     users.clear();
 
-    // TO DO - Add your code below.
+    // TO DO
     int numContents;
     is >> numContents;
     if (is.fail()) { // if can't read number of contents
