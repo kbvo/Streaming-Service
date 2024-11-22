@@ -3,14 +3,11 @@
 #include <fstream>
 using namespace std;
 
-// To do - Complete this function
 StreamService::StreamService()
 {
-    // Update as needed
     cUser_ = nullptr;
 }
 
-// To do - Complete this function
 StreamService::~StreamService()
 {
   for (size_t i = 0; i < users_.size(); i++) {
@@ -21,7 +18,6 @@ StreamService::~StreamService()
   }
 }
 
-// Complete - Do not alter
 void StreamService::readAndParseData(std::istream& is, Parser& p)
 {
     p.parse(is, content_, users_);
@@ -29,7 +25,6 @@ void StreamService::readAndParseData(std::istream& is, Parser& p)
     cout << "Read " << users_.size() << " users." << endl;
 }
 
-// To do - Complete this function
 void StreamService::userLogin(const std::string& uname)
 {
   if (cUser_ != nullptr) { // if another user is already logged in
@@ -42,13 +37,12 @@ void StreamService::userLogin(const std::string& uname)
   cUser_ = users_[userIndex]; // user logs in
 }
 
-// To do - Complete this function
 void StreamService::userLogout()
 {
   cUser_ = nullptr; // user logs out
 }
 
-// To do - Complete this function
+
 std::vector<CID_T> StreamService::searchContent(const std::string& partial) const
 {
     std::vector<CID_T> results;
@@ -66,14 +60,12 @@ std::vector<CID_T> StreamService::searchContent(const std::string& partial) cons
     return results;
 }
 
-// Complete - Do not alter
 std::vector<CID_T> StreamService::getUserHistory() const
 {
     throwIfNoCurrentUser();
     return cUser_->history;
 }
 
-// To do - Complete this function
 void StreamService::watch(CID_T contentID)
 {
   throwIfNoCurrentUser(); // if no current user
@@ -95,7 +87,6 @@ void StreamService::watch(CID_T contentID)
   foundContent->addViewer(cUser_->uname); // add viewer's username to content's viewers
 }
 
-// To do - Complete this function
 void StreamService::reviewShow(CID_T contentID, int numStars)
 {
   throwIfNoCurrentUser(); // if no current user
@@ -114,7 +105,6 @@ void StreamService::reviewShow(CID_T contentID, int numStars)
   foundContent->review(numStars); // add review to content
 }
 
-// To do - Complete this function
 CID_T StreamService::suggestBestSimilarContent(CID_T contentID) const
 {
     throwIfNoCurrentUser(); // if no current user
@@ -200,27 +190,18 @@ CID_T StreamService::suggestBestSimilarContent(CID_T contentID) const
     return similarContentIDs[suggestedContentIndex];
 }
 
-// To do - Complete this function
 void StreamService::displayContentInfo(CID_T contentID) const
 {
-    // Do not alter this
     if(! isValidContentID(contentID)){
         throw std::invalid_argument("Watch: invalid contentID");
     }
-
-    // Call the display abitlity of the appropriate content object
-
-
-
 }
 
-// Complete - Do not alter
 bool StreamService::isValidContentID(CID_T contentID) const
 {
     return (contentID >= 0) && (contentID < (int) content_.size());
 }
 
-// Complete - Do not alter
 void StreamService::throwIfNoCurrentUser() const
 {
     if(cUser_ == NULL){
@@ -228,7 +209,6 @@ void StreamService::throwIfNoCurrentUser() const
     }
 }
 
-// Complete - Do not alter
 int StreamService::getUserIndexByName(const std::string& uname) const
 {
     for(size_t i = 0; i < users_.size(); i++){
