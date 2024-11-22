@@ -16,7 +16,6 @@ void JsonParser::parse(std::istream& is, std::vector<Content*>& content, std::ve
     content.clear();
     users.clear();
 
-    // TO DO
     if(j.find("content") == j.end()){
         throw ParserError("can't find content section");
     }
