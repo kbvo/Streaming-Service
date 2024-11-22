@@ -92,9 +92,6 @@ private:
     std::vector<std::string> usersWhoViewed_;
 };
 
-// Update the Movie and Series classes below to use inheritance
-// add the appropriate data members (if necessary), 
-//  and override the behavior 
 class Movie : public Content// update me 
 {
 public:
@@ -114,16 +111,12 @@ public:
      */
     ~Movie();
 
-    /// Add an override of the Content::display function, 
-    /// if necessary
     void display(std::ostream& ostr) const;
 
 protected:
-    // Do not alter this line
     const char** ratingStrings() const;
 
 private:
-    // Add more data members if you deem it necessary
 
 };
 
@@ -153,16 +146,12 @@ public:
      */
     int numEpisodes() const;
 
-    /// Add an override of the Content::display function, 
-    /// if you deem it necessary
     void display(std::ostream& ostr) const;
 
 protected:
-    // Do not alter this line
     const char** ratingStrings() const;
 
 private:
-    // Add data members as needed
     int numEpisodes_;
 
 };
