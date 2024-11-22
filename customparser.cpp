@@ -9,14 +9,12 @@ const char* error_msg_1 = "Cannot read integer n";
 const char* error_msg_2 = "Error in content parsing";
 const char* error_msg_3 = "Error in user parsing";
 
-// To Do - Complete this function
 void CustomFormatParser::parse(std::istream& is, std::vector<Content*>& content, std::vector<User*>& users)
 {
     // Erase any old contents
     content.clear();
     users.clear();
 
-    // TO DO
     int numContents;
     is >> numContents;
     if (is.fail()) { // if can't read number of contents
