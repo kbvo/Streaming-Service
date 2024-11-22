@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// To do - Complete this function
 Content::Content(int id, std::string name, int nr, int ts, int rating)
 {
   id_ = id;
@@ -14,13 +13,11 @@ Content::Content(int id, std::string name, int nr, int ts, int rating)
   rating_ = rating;
 }
 
-// To do - Complete this function if necessary
 Content::~Content()
 {
 
 }
 
-// Complete - Do not alter
 void Content::display(std::ostream& ostr) const
 {
     ostr << "========" << endl;
@@ -35,44 +32,37 @@ void Content::display(std::ostream& ostr) const
     }
 }
 
-// Complete - Do not alter
 int Content::id() const
 {
     return id_;
 }
 
-// Complete - Do not alter
 std::string Content::name() const
 {
     return name_;
 }
 
-// Complete - Do not alter
 int Content::rating() const
 {
     return rating_;
 }
 
-// Complete - Do not alter
 void Content::review(int numStars) 
 {
     numReviews_++;
     totalStars_ += numStars;
 }
 
-// Complete - Do not alter
 void Content::addViewer(const std::string& username)
 {
     usersWhoViewed_.push_back(username);
 }
 
-// Complete - Do not alter
 const std::vector<std::string>& Content::getViewers() const
 {
     return usersWhoViewed_;
 }
 
-// Complete - Do not alter
 bool Content::hasViewed(const std::string& uname) const
 {
     for(size_t m = 0; m < usersWhoViewed_.size(); m++){
@@ -83,16 +73,12 @@ bool Content::hasViewed(const std::string& uname) const
     return false;
 }
 
-// Complete - Do not alter
 const char** Movie::ratingStrings() const
 {
-    // Global variable of movie rating mappings that you can use for 
-    //  displaying Movie objects. We use "G" for rating 0 and 1.
     static const char* movierating[] = {"G", "G", "PG", "PG-13", "R"};
     return movierating;
 }
 
-// Complete - Do not alter
 const char** Series::ratingStrings() const
 {
     // DEFAULT TO THE SERIES / TV Rating Mappings
@@ -102,7 +88,6 @@ const char** Series::ratingStrings() const
     return tvrating;
 }
 
-// To do - Complete this function
 double Content::getStarAverage() const 
 {
   if (numReviews_ == 0) { // if there are 0 reviews
@@ -113,14 +98,12 @@ double Content::getStarAverage() const
   }
 }
 
-// To do - Complete this function 
 int Series::numEpisodes() const
 {
   // Should return the number of episodes in the series
   return numEpisodes_;
 }
 
-// Complete the other derived class member constructors and member functions
 Movie::Movie(int id, std::string name, int nr, int ts, int rating) :
 Content(id, name, nr, ts, rating) {
 
