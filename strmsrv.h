@@ -178,7 +178,6 @@ private:
     std::vector<User*> users_;
     std::vector<Content*> content_;
     User* cUser_;  // current User;
-    // Add more members here if you deem them necessary
 };
 
 #endif
