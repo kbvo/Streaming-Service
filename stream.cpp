@@ -19,11 +19,9 @@ int main(int argc, char* argv[])
     const char* rating_limit_except_msg = "User not permitted to view this content";
     const char* review_range_except_msg = "Review should be between 0-5 stars";
 
-    // Declare the parsers
     CustomFormatParser cp;
     JsonParser jp;
 
-    // Declare the StreamService object
     StreamService strm;
 
     ifstream ifile(argv[1]);
@@ -31,12 +29,7 @@ int main(int argc, char* argv[])
         cout << "Cannot open file: " << argv[1] << endl;
         return 1;
     }
-    // Attempt to initialize the StreamService object
-    // Wrap the following block of code in a try..catch
-    // sequence.  If a ParserException is thrown, print out
-    // the what() message and return 1.  For any other exception that is 
-    // thrown, ONLY output the string defined in `parser_except_msg` above
-    // and return 1.
+
     try {
         string dbname(argv[1]);
         if(dbname.find(".json") != string::npos){
@@ -58,14 +51,8 @@ int main(int argc, char* argv[])
         cout << parser_except_msg << endl;
     }
     
-
-
-    // Close the file now that we are done parsing
     ifile.close();
 
-
-
-    // Now interact with the user
     cout << "Menu:" << endl;
     cout << "===================================================" << endl;
     cout << "QUIT:              0" << endl;
@@ -118,10 +105,6 @@ int main(int argc, char* argv[])
             else if(option == 5){
                 CID_T cid;
                 cin >> cid;
-                // Add appropriate exception handling as described
-                // in the writeup at an appropriate location of your
-                // choosing. Note it is fine to add a try block here 
-                // (i.e. nested try blocks are legal)
                 try {
                     strm.watch(cid);
                 }
@@ -133,10 +116,6 @@ int main(int argc, char* argv[])
                 CID_T cid;
                 int numstars;
                 cin >> cid >> numstars;
-                // Add appropriate exception handling as described
-                // in the writeup at an appropriate location of your
-                // choosing. Note it is fine to add a try block here 
-                // (i.e. nested try blocks are legal)
                 try {
                     strm.reviewShow(cid, numstars);
                 }
@@ -159,7 +138,6 @@ int main(int argc, char* argv[])
                 option = 0;
             }
         }
-        // Potentially add more catch blocks here, as necessary
         catch (UserNotLoggedInError& logInError) {
             cout << no_user_except_msg << endl;
         }
